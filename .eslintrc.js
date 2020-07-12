@@ -16,7 +16,6 @@ module.exports = {
     commonjs: true,
     jest: true,
     node: true,
-    'cypress/globals': true,
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -40,7 +39,7 @@ module.exports = {
       },
     },
   },
-  plugins: ['react-hooks', 'header', 'cypress'],
+  plugins: ['react-hooks', 'header'],
   rules: {
     'class-methods-use-this': OFF, // It's a way of allowing private variables.
     'func-names': OFF,

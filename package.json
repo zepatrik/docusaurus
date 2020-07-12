@@ -77,7 +77,6 @@
     "eslint": "^7.2.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-cypress": "^2.11.1",
     "eslint-plugin-header": "^3.0.0",
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",

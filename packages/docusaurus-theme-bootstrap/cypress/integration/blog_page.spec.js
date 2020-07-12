@@ -5,22 +5,20 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const homePageFactory = require('../support/home_page.js').default;
-
 describe('Initial Page', () => {
-  const HomePage = homePageFactory();
-  beforeEach(() => {
-    HomePage.navigate();
-  });
+  it('Docs Link', () => {
+    // update port
+    cy.visit('/');
 
-  it('Docs Section', () => {
-    HomePage.goToSection('Docs');
+    cy.contains('Docs').click();
 
     cy.url().should('include', '/docs');
   });
+  it('Blog Link', () => {
+    // update port
+    cy.visit('/');
 
-  it('Blog Section', () => {
-    HomePage.goToSection('Blog');
+    cy.contains('Blog').click();
 
     cy.url().should('include', '/blog');
   });
