@@ -5,21 +5,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-describe('Initial Page', () => {
-  it('Docs Link', () => {
-    // update port
-    cy.visit('/');
+const blogPageFactory = require('../support/doc_page.js').default;
 
-    cy.contains('Docs').click();
+describe('Blog Page', () => {
+  const BlogPage = blogPageFactory();
 
-    cy.url().should('include', '/docs');
-  });
-  it('Blog Link', () => {
-    // update port
-    cy.visit('/');
-
-    cy.contains('Blog').click();
-
-    cy.url().should('include', '/blog');
+  beforeEach(() => {
+    BlogPage.navigate();
   });
 });
