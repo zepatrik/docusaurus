@@ -13,6 +13,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import './styles.css';
 import styles from './styles.module.css';
+import useLocationHash from '../hooks/useLocationHash';
 
 const Heading = (Tag: ComponentType): ((props) => JSX.Element) =>
   function TargetComponent({id, ...props}) {
@@ -21,13 +22,16 @@ const Heading = (Tag: ComponentType): ((props) => JSX.Element) =>
         themeConfig: {navbar: {hideOnScroll = false} = {}} = {},
       } = {},
     } = useDocusaurusContext();
+    const [hash] = useLocationHash(window.location.hash)
 
     if (!id) {
       return <Tag {...props} />;
     }
 
     return (
-      <Tag {...props}>
+      <Tag {...props} className={clsx(props.className, {
+        // window.location.hash starts with '#'
+        'anchor-active': id === hash.slice(1)})}>
         <a
           aria-hidden="true"
           tabIndex={-1}
